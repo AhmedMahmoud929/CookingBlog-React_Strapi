@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  frontend:
+    build:
+      context: ./BlogFrontend
+      dockerfile: dockerFile
+    ports:
+      - '3000:80'
+    depends_on:
+      - backend
+
+  backend:
+    build:
+      context: ./StrapiDashboard
+      dockerfile: dockerFile
+    ports:
+      - '1337:1337'
+    environment:
+      DATABASE_CLIENT: "sqlite"
+      DATABASE_FILENAME: "./data.db"
+      JWT_SECRET: "your_jwt_secret"
+      ADMIN_JWT_SECRET: "your_admin_jwt_secret"
+      API_TOKEN_SALT: "your_api_token_salt"
+    volumes:
+      - ./backend:/app

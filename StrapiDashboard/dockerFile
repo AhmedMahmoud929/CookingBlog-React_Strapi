@@ -1,0 +1,22 @@
+# Stage 1: Build the Strapi app
+FROM node:18 AS build
+
+WORKDIR /app
+
+# Copy package.json and package-lock.json
+COPY package.json package-lock.json ./
+
+# Install dependencies
+RUN npm install
+
+# Copy the rest of the app files
+COPY . .
+
+# Build the Strapi app (if required)
+RUN npm run build
+
+# Expose port 1337 for the Strapi API
+EXPOSE 1337
+
+# Start Strapi
+CMD ["npm", "run", "start"]

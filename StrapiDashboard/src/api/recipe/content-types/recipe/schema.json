@@ -1,0 +1,68 @@
+{
+  "kind": "collectionType",
+  "collectionName": "recipes",
+  "info": {
+    "singularName": "recipe",
+    "pluralName": "recipes",
+    "displayName": "Recipe",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "cover": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "prepTime": {
+      "type": "biginteger",
+      "required": true
+    },
+    "cookTime": {
+      "type": "biginteger",
+      "required": true
+    },
+    "brief": {
+      "type": "text",
+      "required": true
+    },
+    "auther": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::auther.auther",
+      "inversedBy": "recipes"
+    },
+    "category": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::category.category",
+      "inversedBy": "recipes"
+    },
+    "ingredients": {
+      "type": "component",
+      "repeatable": true,
+      "component": "todo-list.ingredients"
+    },
+    "nutritionInfo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "info-list.nutrition-info"
+    },
+    "directions": {
+      "type": "component",
+      "repeatable": false,
+      "component": "todo-list.ingredients"
+    }
+  }
+}

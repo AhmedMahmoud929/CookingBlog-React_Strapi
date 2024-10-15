@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_todo_list_list_items",
+  "info": {
+    "displayName": "ListItem",
+    "icon": "check",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "header": {
+      "type": "string",
+      "required": true
+    },
+    "img": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "body": {
+      "type": "text"
+    }
+  }
+}

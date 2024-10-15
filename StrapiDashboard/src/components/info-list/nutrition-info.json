@@ -1,0 +1,30 @@
+{
+  "collectionName": "components_info_list_nutrition_infos",
+  "info": {
+    "displayName": "nutritionInfo",
+    "icon": "information"
+  },
+  "options": {},
+  "attributes": {
+    "calories": {
+      "type": "string",
+      "required": true
+    },
+    "totalFat": {
+      "type": "string",
+      "required": true
+    },
+    "protein": {
+      "type": "string",
+      "required": true
+    },
+    "carbohydrate": {
+      "type": "string",
+      "required": true
+    },
+    "cholesterol": {
+      "type": "string",
+      "required": true
+    }
+  }
+}
